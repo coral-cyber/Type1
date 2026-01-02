@@ -1,0 +1,373 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "Almond Milkshake",
+      "image": "src/assets/items/almondmilkshake.webp",
+      "category": "beverages",
+      "calories": "220 kcal",
+      "price": 4.5,
+      "description": "Creamy almond blend with a light nutty taste."
+    },
+    {
+      "id": 2,
+      "name": "Bagel",
+      "image": "src/assets/items/bagel.webp",
+      "category": "savory",
+      "calories": "260 kcal",
+      "price": 2.5,
+      "description": "Classic baked bagel with a chewy texture."
+    },
+    {
+      "id": 3,
+      "name": "Bagel Classic",
+      "image": "src/assets/items/bagel2.webp",
+      "category": "savory",
+      "calories": "270 kcal",
+      "price": 2.8,
+      "description": "Freshly baked traditional style bagel."
+    },
+    {
+      "id": 4,
+      "name": "Baguette",
+      "image": "src/assets/items/baguette.webp",
+      "category": "savory",
+      "calories": "290 kcal",
+      "price": 3.2,
+      "description": "Crispy crust with a soft airy center."
+    },
+    {
+      "id": 5,
+      "name": "Banana Milkshake",
+      "image": "src/assets/items/bananamilkshake.webp",
+      "category": "beverages",
+      "calories": "240 kcal",
+      "price": 4.0,
+      "description": "Smooth banana shake with natural sweetness."
+    },
+    {
+      "id": 6,
+      "name": "Berry Shake",
+      "image": "src/assets/items/berryshake.webp",
+      "category": "beverages",
+      "calories": "210 kcal",
+      "price": 4.3,
+      "description": "Refreshing mix of seasonal berries."
+    },
+    {
+      "id": 7,
+      "name": "Blackberry Juice",
+      "image": "src/assets/items/blackberryjuice.webp",
+      "category": "beverages",
+      "calories": "140 kcal",
+      "price": 3.8,
+      "description": "Fresh blackberry juice with a tangy note."
+    },
+    {
+      "id": 8,
+      "name": "Brownie",
+      "image": "src/assets/items/brownie.webp",
+      "category": "sweet",
+      "calories": "320 kcal",
+      "price": 3.0,
+      "description": "Rich chocolate brownie with a fudgy bite."
+    },
+    {
+      "id": 9,
+      "name": "Burger",
+      "image": "src/assets/items/burger.webp",
+      "category": "savory",
+      "calories": "450 kcal",
+      "price": 6.5,
+      "description": "Juicy burger layered with fresh fillings."
+    },
+    {
+      "id": 10,
+      "name": "Chicken Roll",
+      "image": "src/assets/items/chickenroll.webp",
+      "category": "savory",
+      "calories": "380 kcal",
+      "price": 5.5,
+      "description": "Soft roll stuffed with seasoned chicken."
+    },
+    {
+      "id": 11,
+      "name": "Cinnamon Roll",
+      "image": "src/assets/items/cinnamonroll.webp",
+      "category": "sweet",
+      "calories": "340 kcal",
+      "price": 3.5,
+      "description": "Warm roll swirled with cinnamon sugar."
+    },
+    {
+      "id": 12,
+      "name": "Cinnamon Roll Glazed",
+      "image": "src/assets/items/cinnamonroll2.webp",
+      "category": "sweet",
+      "calories": "360 kcal",
+      "price": 3.8,
+      "description": "Classic cinnamon roll topped with glaze."
+    },
+    {
+      "id": 13,
+      "name": "Coffee",
+      "image": "src/assets/items/coffee.webp",
+      "category": "beverages",
+      "calories": "80 kcal",
+      "price": 2.5,
+      "description": "Freshly brewed coffee with bold aroma."
+    },
+    {
+      "id": 14,
+      "name": "Corn Dog",
+      "image": "src/assets/items/corndog.webp",
+      "category": "savory",
+      "calories": "310 kcal",
+      "price": 4.2,
+      "description": "Crispy battered snack with a soft inside."
+    },
+    {
+      "id": 15,
+      "name": "Cupcake Vanilla",
+      "image": "src/assets/items/cupcake1.webp",
+      "category": "sweet",
+      "calories": "260 kcal",
+      "price": 2.8,
+      "description": "Soft vanilla cupcake with light frosting."
+    },
+    {
+      "id": 16,
+      "name": "Cupcake Chocolate",
+      "image": "src/assets/items/cupcake2.webp",
+      "category": "sweet",
+      "calories": "280 kcal",
+      "price": 3.0,
+      "description": "Chocolate cupcake with rich cocoa flavor."
+    },
+    {
+      "id": 17,
+      "name": "Cupcake Strawberry",
+      "image": "src/assets/items/cupcake3.webp",
+      "category": "sweet",
+      "calories": "270 kcal",
+      "price": 2.9,
+      "description": "Fluffy cupcake with strawberry essence."
+    },
+    {
+      "id": 18,
+      "name": "Cupcake Blueberry",
+      "image": "src/assets/items/cupcake4.webp",
+      "category": "sweet",
+      "calories": "275 kcal",
+      "price": 3.0,
+      "description": "Moist cupcake with blueberry notes."
+    },
+    {
+      "id": 19,
+      "name": "Donut",
+      "image": "src/assets/items/donut1.webp",
+      "category": "sweet",
+      "calories": "290 kcal",
+      "price": 2.5,
+      "description": "Soft donut with a lightly sweet glaze."
+    },
+    {
+      "id": 20,
+      "name": "Cutlets",
+      "image": "src/assets/items/cutlets.webp",
+      "category": "savory",
+      "calories": "330 kcal",
+      "price": 4.8,
+      "description": "Crispy fried cutlets with spiced filling."
+    },
+    {
+      "id": 21,
+      "name": "Eclair",
+      "image": "src/assets/items/eclair.webp",
+      "category": "sweet",
+      "calories": "300 kcal",
+      "price": 3.2,
+      "description": "Cream-filled pastry topped with chocolate."
+    },
+    {
+      "id": 22,
+      "name": "Grilled Sandwich",
+      "image": "src/assets/items/grilledsandwich.webp",
+      "category": "savory",
+      "calories": "350 kcal",
+      "price": 5.0,
+      "description": "Toasted sandwich with melted filling."
+    },
+    {
+      "id": 23,
+      "name": "Hot Chocolate",
+      "image": "src/assets/items/hotchocolate.webp",
+      "category": "beverages",
+      "calories": "250 kcal",
+      "price": 4.0,
+      "description": "Warm chocolate drink, rich and comforting."
+    },
+    {
+      "id": 24,
+      "name": "Kiwi Juice",
+      "image": "src/assets/items/kewijuice.webp",
+      "category": "beverages",
+      "calories": "130 kcal",
+      "price": 3.6,
+      "description": "Fresh kiwi juice with a zesty taste."
+    },
+    {
+      "id": 25,
+      "name": "Pie",
+      "image": "src/assets/items/pie.webp",
+      "category": "sweet",
+      "calories": "340 kcal",
+      "price": 3.8,
+      "description": "Classic baked pie with sweet filling."
+    },
+    {
+      "id": 26,
+      "name": "Fruit Pie",
+      "image": "src/assets/items/pie2.webp",
+      "category": "sweet",
+      "calories": "330 kcal",
+      "price": 3.9,
+      "description": "Golden crust filled with mixed fruits."
+    },
+    {
+      "id": 27,
+      "name": "Pastry",
+      "image": "src/assets/items/pastry.webp",
+      "category": "sweet",
+      "calories": "310 kcal",
+      "price": 3.4,
+      "description": "Layered pastry with creamy filling."
+    },
+    {
+      "id": 28,
+      "name": "Paneer Pastry",
+      "image": "src/assets/items/paneerpastry.webp",
+      "category": "savory",
+      "calories": "360 kcal",
+      "price": 4.5,
+      "description": "Savory pastry filled with spiced paneer."
+    },
+    {
+      "id": 29,
+      "name": "Pancake",
+      "image": "src/assets/items/pancake.webp",
+      "category": "sweet",
+      "calories": "290 kcal",
+      "price": 3.6,
+      "description": "Soft pancakes served warm and fluffy."
+    },
+    {
+      "id": 30,
+      "name": "Mango Shake",
+      "image": "src/assets/items/mangoshake.webp",
+      "category": "beverages",
+      "calories": "230 kcal",
+      "price": 4.2,
+      "description": "Thick mango shake with tropical flavor."
+    },
+    {
+      "id": 31,
+      "name": "Lemonade",
+      "image": "src/assets/items/lemonade.webp",
+      "category": "beverages",
+      "calories": "120 kcal",
+      "price": 3.0,
+      "description": "Cool lemon drink, light and refreshing."
+    },
+    {
+      "id": 32,
+      "name": "Pineapple Juice",
+      "image": "src/assets/items/pinejuice.webp",
+      "category": "beverages",
+      "calories": "150 kcal",
+      "price": 3.5,
+      "description": "Sweet and tangy pineapple juice."
+    },
+    {
+      "id": 33,
+      "name": "Pizza",
+      "image": "src/assets/items/pizza.webp",
+      "category": "savory",
+      "calories": "420 kcal",
+      "price": 7.0,
+      "description": "Cheesy pizza with a crispy base."
+    },
+    {
+      "id": 34,
+      "name": "Sandwich",
+      "image": "src/assets/items/sandwich.webp",
+      "category": "savory",
+      "calories": "300 kcal",
+      "price": 4.5,
+      "description": "Fresh sandwich with balanced fillings."
+    },
+    {
+      "id": 35,
+      "name": "Scone",
+      "image": "src/assets/items/scone.webp",
+      "category": "sweet",
+      "calories": "280 kcal",
+      "price": 3.1,
+      "description": "Lightly baked scone with soft crumb."
+    },
+    {
+      "id": 36,
+      "name": "Smoothie",
+      "image": "src/assets/items/smoothie.webp",
+      "category": "beverages",
+      "calories": "200 kcal",
+      "price": 4.0,
+      "description": "Blended fruits for a smooth refreshment."
+    },
+    {
+      "id": 37,
+      "name": "Strawberry Cake",
+      "image": "src/assets/items/strawberrycake.webp",
+      "category": "sweet",
+      "calories": "360 kcal",
+      "price": 4.8,
+      "description": "Soft cake layered with strawberry cream."
+    },
+    {
+      "id": 38,
+      "name": "Strawberry Juice",
+      "image": "src/assets/items/strawberryjuice.webp",
+      "category": "beverages",
+      "calories": "140 kcal",
+      "price": 3.4,
+      "description": "Fresh strawberry juice, lightly sweet."
+    },
+    {
+      "id": 39,
+      "name": "Tart",
+      "image": "src/assets/items/tart.webp",
+      "category": "sweet",
+      "calories": "310 kcal",
+      "price": 3.6,
+      "description": "Crisp tart with a smooth filling."
+    },
+    {
+      "id": 40,
+      "name": "Veg Pizza",
+      "image": "src/assets/items/vegpizza.webp",
+      "category": "savory",
+      "calories": "390 kcal",
+      "price": 6.5,
+      "description": "Veg-loaded pizza with melted cheese."
+    },
+    {
+      "id": 41,
+      "name": "Mixed Fruit Juice",
+      "image": "src/assets/items/yellowjuice.webp",
+      "category": "beverages",
+      "calories": "145 kcal",
+      "price": 3.3,
+      "description": "Blend of seasonal fruits, light and fresh."
+    }
+  ]
+}
