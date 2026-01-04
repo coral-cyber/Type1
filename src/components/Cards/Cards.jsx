@@ -30,6 +30,7 @@ export default function Cards({ items, onAdd }) {
               <img
                 src={src}
                 alt={item.name}
+                loading="lazy"
                 className="
                   w-full h-36 sm:h-40 md:h-44
                   object-cover rounded-t-xl

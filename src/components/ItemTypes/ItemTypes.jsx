@@ -60,6 +60,7 @@ function ItemTypes() {
             <img
               src={item.img}
               alt={item.name}
+              loading="lazy"
               className="h-16 w-16 md:h-24 md:w-24 object-cover rounded-2xl border border-white/30 hover:scale-105 transition-transform"
             />
             <span className="mt-1 text-xs md:text-sm font-medium text-black text-center">
