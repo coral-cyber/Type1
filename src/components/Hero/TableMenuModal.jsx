@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 const categoryBadge = {
   beverages: "bg-blue-100 text-blue-700",
@@ -15,42 +15,40 @@ const chunk = (arr, size) => {
 };
 
 export default function TableMenuModal({ items = [], isOpen, onClose }) {
-  // Lock body scroll when modal is open
+  const [show, setShow] = useState(false);
+
   useEffect(() => {
-    if (isOpen) document.body.style.overflow = "hidden";
-    else document.body.style.overflow = "";
-    return () => {
+    if (isOpen) {
+      setShow(true);
+      document.body.style.overflow = "hidden";
+    } else {
       document.body.style.overflow = "";
-    };
+      // Keep modal mounted briefly to allow transition
+      const timeout = setTimeout(() => setShow(false), 300);
+      return () => clearTimeout(timeout);
+    }
   }, [isOpen]);
 
-  if (!isOpen) return null;
+  if (!show) return null;
 
   const rows = chunk(items, 3);
 
-  // Scroll to card of a clicked item
-  const handleItemClick = (id) => {
-    const el = document.getElementById(`card-${id}`);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "center" });
-      onClose(); // Close modal after scroll
-    }
-  };
-
   return (
-    <div className="fixed inset-0 z-999 flex items-end md:items-center justify-center">
+    <div className="fixed inset-0 z-50 flex items-end md:items-center justify-center">
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
         onClick={onClose}
+        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
       />
 
       {/* Modal */}
       <div
-        className="relative bg-white rounded-t-2xl md:rounded-2xl shadow-2xl
-          w-full md:w-[90%] max-w-6xl
-          max-h-[85vh] overflow-y-auto
-          transition-transform duration-300 ease-out"
+        className={`
+          relative bg-white rounded-t-2xl md:rounded-2xl shadow-2xl
+          w-full md:w-[90%] max-w-6xl max-h-[85vh] overflow-y-auto
+          transform transition-transform duration-300 ease-out
+          ${isOpen ? "translate-y-0" : "translate-y-full"}
+        `}
       >
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b sticky top-0 bg-white z-10">
@@ -74,7 +72,15 @@ export default function TableMenuModal({ items = [], isOpen, onClose }) {
                 {row.map((item) => (
                   <div
                     key={item.id}
-                    onClick={() => handleItemClick(item.id)}
+                    onClick={() => {
+                      const el = document.getElementById(`card-${item.id}`);
+                      if (el)
+                        el.scrollIntoView({
+                          behavior: "smooth",
+                          block: "center",
+                        });
+                      onClose();
+                    }}
                     className="flex md:table-cell w-full md:w-1/3 px-2 py-3 hover:bg-gray-50 cursor-pointer transition"
                   >
                     <img
@@ -82,7 +88,6 @@ export default function TableMenuModal({ items = [], isOpen, onClose }) {
                       alt={item.name}
                       className="hidden md:block w-12 h-12 md:w-10 md:h-10 rounded-md object-cover"
                     />
-
                     <div className="ml-3 flex-1 min-w-0">
                       <p className="font-medium text-gray-800 truncate">
                         {item.name}
