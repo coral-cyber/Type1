@@ -1,7 +1,7 @@
-import { useState } from "react";
+import React, { useState, forwardRef, useImperativeHandle } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
-export default function CafeLocation() {
+const CafeLocation = forwardRef((props, ref) => {
   const CAFE_LAT = 28.6139;
   const CAFE_LNG = 77.209;
 
@@ -42,6 +42,11 @@ export default function CafeLocation() {
     );
   };
 
+  // Expose a function to parent via ref
+  useImperativeHandle(ref, () => ({
+    openMap: () => setIsOpen(true),
+  }));
+
   return (
     <div className="relative">
       {/* MAP ICON BUTTON */}
@@ -56,7 +61,6 @@ export default function CafeLocation() {
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4">
           <div className="bg-white w-full max-w-xs rounded-lg p-5 shadow-lg relative">
-            {/* CLOSE BUTTON */}
             <button
               onClick={() => setIsOpen(false)}
               className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-xl"
@@ -68,7 +72,6 @@ export default function CafeLocation() {
               📍 Cafe Location
             </h2>
 
-            {/* HOW FAR BUTTON */}
             <button
               onClick={handleDistanceCheck}
               className="w-full bg-amber-600 text-white py-2 rounded-lg font-medium mb-4 hover:bg-amber-500 transition"
@@ -76,7 +79,6 @@ export default function CafeLocation() {
               How far am I from this cafe?
             </button>
 
-            {/* RESULT BLOCK */}
             {(distance || status) && (
               <div className="border rounded-lg p-4 bg-gray-50 text-center">
                 {distance && (
@@ -88,7 +90,6 @@ export default function CafeLocation() {
               </div>
             )}
 
-            {/* DIRECTIONS LINK */}
             <a
               href="https://www.google.com/maps"
               target="_blank"
@@ -102,4 +103,6 @@ export default function CafeLocation() {
       )}
     </div>
   );
-}
+});
+
+export default CafeLocation;

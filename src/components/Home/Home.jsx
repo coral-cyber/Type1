@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useEffect } from "react";
+import React, { useMemo, useState, useEffect, useRef } from "react";
 import Navbar from "../Navbar/Navbar";
 import ItemTypes from "../ItemTypes/ItemTypes";
 import Hero from "../Hero/Hero";
@@ -6,11 +6,14 @@ import Cards from "../Cards/Cards";
 import Cart from "../Cart/Cart";
 import itemsData from "../../data/items.json";
 import WhatsApp from "../WhatsApp/WhatsApp";
+import TableMenuModal from "../Hero/TableMenuModal";
 
 function Home() {
   const [items, setItems] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
+  const [showTableMenu, setShowTableMenu] = useState(false);
+  const [isMenuShown, setIsMenuShown] = useState(false);
 
   // 🛒 Cart state
   const [cart, setCart] = useState([]);
@@ -19,6 +22,9 @@ function Home() {
   const removeItem = (index) => {
     setCart((prev) => prev.filter((_, i) => i !== index));
   };
+
+  // ✅ Map ref lifted here
+  const mapRef = useRef();
 
   useEffect(() => {
     setItems(itemsData.items);
@@ -50,10 +56,20 @@ function Home() {
         items={items}
         cartCount={cart.length}
         onCartClick={() => setIsCartOpen(true)}
+        mapRef={mapRef} // pass ref to Navbar
       />
 
       {/* HERO */}
-      <Hero />
+      <Hero
+        onShowMenu={() => setIsMenuShown(true)}
+        onGoToMap={() => mapRef.current?.openMap()} // use the same ref
+      />
+
+      <TableMenuModal
+        items={items}
+        isOpen={isMenuShown}
+        onClose={() => setIsMenuShown(false)}
+      />
 
       {/* ITEM TYPES */}
       <ItemTypes />

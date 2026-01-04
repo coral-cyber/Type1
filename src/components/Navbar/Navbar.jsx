@@ -1,14 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { MdOutlineRestaurantMenu } from "react-icons/md";
 import { FaSearch, FaShoppingCart } from "react-icons/fa";
 import Logo11 from "../../assets/log2.png";
 import CafeLocation from "./Map";
 
-function Navbar({ onSelect, onSearch, items, cartCount = 0, onCartClick }) {
+function Navbar({
+  onSelect,
+  onSearch,
+  items,
+  cartCount = 0,
+  onCartClick,
+  mapRef,
+}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Detect scroll
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
@@ -55,7 +61,7 @@ function Navbar({ onSelect, onSearch, items, cartCount = 0, onCartClick }) {
         </button>
 
         {/* Map */}
-        <Map />
+        <CafeLocation ref={mapRef} />
       </div>
     </nav>
   );
@@ -75,7 +81,7 @@ const MenuBtn = ({ isMenuOpen, setIsMenuOpen }) => (
 );
 
 const Menu = ({ onSelectCategory }) => (
-  <ul className="absolute top-full left-0 bg-white shadow-lg p-3 rounded-md mt-1 min-w-[120px] z-50">
+  <ul className="absolute top-full left-0 bg-white shadow-lg p-3 rounded-md mt-1 min-w-30 z-50">
     {["Sweet", "Savory", "Beverages", "All"].map((cat) => (
       <li key={cat} className="py-1">
         <button
@@ -150,7 +156,7 @@ const SearchBar = ({ items = [], onSearch }) => {
 
           {/* Dropdown results */}
           {query && filteredItems.length > 0 && (
-            <div className="absolute top-[60px] left-0 w-full bg-white rounded-md shadow-lg max-h-60 overflow-y-auto">
+            <div className="absolute top-15 left-0 w-full bg-white rounded-md shadow-lg max-h-60 overflow-y-auto">
               {filteredItems.slice(0, 6).map((item) => (
                 <button
                   key={item.id}
@@ -199,5 +205,3 @@ const SearchBar = ({ items = [], onSearch }) => {
     </>
   );
 };
-
-const Map = () => <CafeLocation />;

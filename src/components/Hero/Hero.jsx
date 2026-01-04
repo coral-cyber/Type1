@@ -2,7 +2,7 @@ import React from "react";
 import HeroAvif from "../../assets/her.avif";
 import HeroWebp from "../../assets/her.webp";
 
-function Hero() {
+function Hero({ onShowMenu, onGoToMap }) {
   return (
     <section className="relative h-[30vh] md:h-screen overflow-hidden">
       {/* HERO IMAGE (LCP ELEMENT) */}
@@ -39,10 +39,16 @@ function Hero() {
           </p>
 
           <div className="flex gap-2 md:gap-4 flex-wrap">
-            <button className="bg-yellow-500 text-white px-3 py-1 md:px-6 md:py-3 rounded-lg hover:bg-yellow-600 transition">
+            <button
+              onClick={onShowMenu}
+              className="bg-yellow-500 text-white px-3 py-1 md:px-6 md:py-3 rounded-lg hover:bg-yellow-600 transition"
+            >
               View Our Menu
             </button>
-            <button className="bg-white text-yellow-500 px-3 py-1 md:px-6 md:py-3 rounded-lg hover:bg-gray-200 transition">
+            <button
+              onClick={onGoToMap}
+              className="bg-white text-yellow-500 px-3 py-1 md:px-6 md:py-3 rounded-lg hover:bg-gray-200 transition"
+            >
               Find Our Bakery
             </button>
           </div>

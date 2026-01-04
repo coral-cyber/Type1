@@ -16,6 +16,7 @@ export default function Cards({ items, onAdd }) {
 
         return (
           <div
+            id={`card-${item.id}`}
             key={item.id}
             className="
               bg-white rounded-xl shadow-md
