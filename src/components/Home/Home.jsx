@@ -1,18 +1,26 @@
-import React, { useMemo, useState, useEffect, useRef } from "react";
+import React, {
+  useMemo,
+  useState,
+  useEffect,
+  useRef,
+  Suspense,
+  lazy,
+} from "react";
 import Navbar from "../Navbar/Navbar";
-import ItemTypes from "../ItemTypes/ItemTypes";
 import Hero from "../Hero/Hero";
-import Cards from "../Cards/Cards";
 import Cart from "../Cart/Cart";
 import itemsData from "../../data/items.json";
 import WhatsApp from "../WhatsApp/WhatsApp";
 import TableMenuModal from "../Hero/TableMenuModal";
 
+// Lazy-loaded components
+const ItemTypes = lazy(() => import("../ItemTypes/ItemTypes"));
+const Cards = lazy(() => import("../Cards/Cards"));
+
 function Home() {
   const [items, setItems] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
-  const [showTableMenu, setShowTableMenu] = useState(false);
   const [isMenuShown, setIsMenuShown] = useState(false);
 
   // 🛒 Cart state
@@ -65,6 +73,7 @@ function Home() {
         onGoToMap={() => mapRef.current?.openMap()} // use the same ref
       />
 
+      {/* TABLE MENU MODAL */}
       <TableMenuModal
         items={items}
         isOpen={isMenuShown}
@@ -72,12 +81,20 @@ function Home() {
       />
 
       {/* ITEM TYPES */}
-      <ItemTypes />
+      <Suspense
+        fallback={<div className="text-center py-6">Loading menu...</div>}
+      >
+        <ItemTypes />
+      </Suspense>
 
       {/* CARDS */}
       <div className="px-4 sm:px-6 lg:px-16 py-6">
         {filteredItems.length > 0 ? (
-          <Cards items={filteredItems} onAdd={addToCart} />
+          <Suspense
+            fallback={<div className="text-center py-6">Loading items...</div>}
+          >
+            <Cards items={filteredItems} onAdd={addToCart} />
+          </Suspense>
         ) : (
           <p className="text-center mt-10 text-gray-500 text-lg">
             No items available
@@ -92,6 +109,8 @@ function Home() {
         cart={cart}
         onRemove={removeItem}
       />
+
+      {/* WHATSAPP BUTTON */}
       <WhatsApp phone="918767971866" message="Hello! I want to order." />
     </div>
   );

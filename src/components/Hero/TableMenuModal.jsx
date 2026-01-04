@@ -80,8 +80,9 @@ export default function TableMenuModal({ items = [], isOpen, onClose }) {
                     <img
                       src={item.image}
                       alt={item.name}
-                      className="w-12 h-12 md:w-10 md:h-10 rounded-md object-cover"
+                      className="hidden md:block w-12 h-12 md:w-10 md:h-10 rounded-md object-cover"
                     />
+
                     <div className="ml-3 flex-1 min-w-0">
                       <p className="font-medium text-gray-800 truncate">
                         {item.name}
